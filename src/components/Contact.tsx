@@ -45,11 +45,11 @@ const Contact: React.FC = () => {
   };
   
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900">
+    <section id="contact" className="py-20 bg-gradient-to-br from-blue-50 to-red-50 dark:from-gray-800 dark:to-gray-900">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">Get In Touch</h2>
-          <div className="w-20 h-1.5 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-500 dark:to-purple-500 rounded-full mb-6"></div>
+          <div className="w-20 h-1.5 rounded-full mb-6" style={{ background: 'linear-gradient(90deg, #4169E1 0%, #FF0000 100%)' }}></div>
           <p className="text-gray-600 dark:text-gray-300 text-center max-w-2xl">
             Have a project in mind or want to discuss potential opportunities? I'd love to hear from you! Let's create something amazing together.
           </p>
@@ -57,7 +57,8 @@ const Contact: React.FC = () => {
         
         <div className="max-w-5xl mx-auto bg-white dark:bg-gray-900 rounded-2xl shadow-2xl overflow-hidden border border-gray-100 dark:border-gray-800">
           <div className="grid grid-cols-1 lg:grid-cols-2">
-            <div className="bg-gradient-to-br from-blue-600 to-purple-700 dark:from-blue-700 dark:to-purple-800 p-8 lg:p-12 text-white relative overflow-hidden">
+            <div className="p-8 lg:p-12 text-white relative overflow-hidden"
+                 style={{ background: 'linear-gradient(135deg, #4169E1 0%, #FF0000 100%)' }}>
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
               <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-12 -translate-x-12"></div>
               
@@ -131,16 +132,18 @@ const Contact: React.FC = () => {
               <h3 className="text-2xl lg:text-3xl font-bold text-gray-800 dark:text-white mb-6">Send a Message</h3>
               
               {submitStatus === 'success' ? (
-                <div className="bg-green-50 border border-green-200 text-green-800 px-6 py-4 rounded-lg mb-6 flex items-start">
-                  <CheckCircle className="w-5 h-5 mr-3 mt-0.5 flex-shrink-0" />
+                <div className="border text-green-800 px-6 py-4 rounded-lg mb-6 flex items-start"
+                     style={{ backgroundColor: 'rgba(65,105,225,0.1)', borderColor: '#4169E1' }}>
+                  <CheckCircle className="w-5 h-5 mr-3 mt-0.5 flex-shrink-0" style={{ color: '#4169E1' }} />
                   <div>
                     <p className="font-medium">Message sent successfully!</p>
                     <p className="text-sm mt-1">Your email client should have opened. If not, please send your message directly to shetrahgrafix@gmail.com. I'll get back to you soon!</p>
                   </div>
                 </div>
               ) : submitStatus === 'error' ? (
-                <div className="bg-red-50 border border-red-200 text-red-800 px-6 py-4 rounded-lg mb-6 flex items-start">
-                  <AlertCircle className="w-5 h-5 mr-3 mt-0.5 flex-shrink-0" />
+                <div className="border text-red-800 px-6 py-4 rounded-lg mb-6 flex items-start"
+                     style={{ backgroundColor: 'rgba(255,0,0,0.1)', borderColor: '#FF0000' }}>
+                  <AlertCircle className="w-5 h-5 mr-3 mt-0.5 flex-shrink-0" style={{ color: '#FF0000' }} />
                   <div>
                     <p className="font-medium">There was an error</p>
                     <p className="text-sm mt-1">Please try again or contact me directly at shetrahgrafix@gmail.com</p>
@@ -158,7 +161,10 @@ const Contact: React.FC = () => {
                       name="name" 
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white transition-all duration-300"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent dark:bg-gray-800 dark:text-white transition-all duration-300"
+                      style={{ '--tw-ring-color': '#4169E1' }}
+                      onFocus={(e) => e.target.style.borderColor = '#4169E1'}
+                      onBlur={(e) => e.target.style.borderColor = ''}
                       required
                       placeholder="Your full name"
                     />
@@ -172,7 +178,9 @@ const Contact: React.FC = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white transition-all duration-300"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent dark:bg-gray-800 dark:text-white transition-all duration-300"
+                      onFocus={(e) => e.target.style.borderColor = '#4169E1'}
+                      onBlur={(e) => e.target.style.borderColor = ''}
                       required
                       placeholder="your.email@example.com"
                     />
@@ -187,7 +195,9 @@ const Contact: React.FC = () => {
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white transition-all duration-300"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent dark:bg-gray-800 dark:text-white transition-all duration-300"
+                    onFocus={(e) => e.target.style.borderColor = '#4169E1'}
+                    onBlur={(e) => e.target.style.borderColor = ''}
                     required
                     placeholder="What's this about?"
                   />
@@ -201,7 +211,9 @@ const Contact: React.FC = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows={5}
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white transition-all duration-300 resize-none"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent dark:bg-gray-800 dark:text-white transition-all duration-300 resize-none"
+                    onFocus={(e) => e.target.style.borderColor = '#4169E1'}
+                    onBlur={(e) => e.target.style.borderColor = ''}
                     required
                     placeholder="Tell me about your project or how I can help you..."
                   ></textarea>
@@ -209,7 +221,10 @@ const Contact: React.FC = () => {
                 
                 <button 
                   type="submit" 
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium py-4 px-6 rounded-lg transition-all duration-300 flex items-center justify-center hover:shadow-lg transform hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="w-full text-white font-medium py-4 px-6 rounded-lg transition-all duration-300 flex items-center justify-center hover:shadow-lg transform hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed"
+                  style={{ background: 'linear-gradient(135deg, #4169E1 0%, #FF0000 100%)' }}
+                  onMouseEnter={(e) => e.target.style.background = 'linear-gradient(135deg, #FF0000 0%, #4169E1 100%)'}
+                  onMouseLeave={(e) => e.target.style.background = 'linear-gradient(135deg, #4169E1 0%, #FF0000 100%)'}
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (

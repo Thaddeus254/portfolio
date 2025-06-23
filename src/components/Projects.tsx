@@ -11,7 +11,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">Featured Projects</h2>
-          <div className="w-20 h-1.5 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-500 dark:to-purple-500 rounded-full mb-6"></div>
+          <div className="w-20 h-1.5 rounded-full mb-6" style={{ background: 'linear-gradient(90deg, #4169E1 0%, #FF0000 100%)' }}></div>
           <p className="text-gray-600 dark:text-gray-300 text-center max-w-2xl">
             A collection of my most impactful design projects, IT solutions, and creative works spanning graphic design, web development, and technical services.
           </p>
@@ -29,11 +29,14 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                     style={{ background: 'linear-gradient(45deg, rgba(65,105,225,0.2) 0%, rgba(255,0,0,0.2) 100%)' }}></div>
               </div>
               
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3 transition-colors hover:scale-105 transform"
+                    onMouseEnter={(e) => e.target.style.color = '#4169E1'}
+                    onMouseLeave={(e) => e.target.style.color = ''}>
                   {project.title}
                 </h3>
                 
@@ -45,7 +48,13 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                   {project.tags.map((tag, i) => (
                     <span 
                       key={i}
-                      className="px-3 py-1 text-sm font-medium bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900 text-blue-800 dark:text-blue-200 rounded-full border border-blue-200 dark:border-blue-800 hover:shadow-md transition-shadow"
+                      className="px-3 py-1 text-sm font-medium text-white rounded-full border hover:shadow-md transition-all hover:scale-105 transform"
+                      style={{ 
+                        background: i % 2 === 0 
+                          ? 'linear-gradient(135deg, #4169E1 0%, #FF0000 100%)' 
+                          : 'linear-gradient(135deg, #FF0000 0%, #4169E1 100%)',
+                        borderColor: '#4169E1'
+                      }}
                     >
                       {tag}
                     </span>
@@ -57,12 +66,15 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
         </div>
         
         <div className="text-center mt-12">
-          <p className="text-gray-600 dark:text-gray-300 text-lg">
+          <p className="text-gray-600 dark:text-gray-300 text-lg mb-4">
             Interested in working together? Let's create something amazing!
           </p>
           <a 
             href="#contact" 
-            className="inline-block mt-4 px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium rounded-full transition-all duration-300 hover:shadow-lg transform hover:scale-105"
+            className="inline-block px-8 py-3 text-white font-medium rounded-full transition-all duration-300 hover:shadow-lg transform hover:scale-105"
+            style={{ background: 'linear-gradient(135deg, #4169E1 0%, #FF0000 100%)' }}
+            onMouseEnter={(e) => e.target.style.background = 'linear-gradient(135deg, #FF0000 0%, #4169E1 100%)'}
+            onMouseLeave={(e) => e.target.style.background = 'linear-gradient(135deg, #4169E1 0%, #FF0000 100%)'}
           >
             Get In Touch
           </a>
