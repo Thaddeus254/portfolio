@@ -124,7 +124,7 @@ const Footer: React.FC = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-center md:text-left mb-4 md:mb-0">
               <p className="text-sm flex items-center justify-center md:justify-start">
-                Made with <Heart size={14} style={{ color: '#FF0000' }} className="mx-1" /> by Shetrahgrafix © {currentYear}
+                Made with <Heart size={14} style={{ color: '#FF0000' }} className="mx-1" /> by Shetrahgrafix.co.ke © {currentYear}
               </p>
             </div>
             
