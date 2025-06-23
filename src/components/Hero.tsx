@@ -1,5 +1,5 @@
-import React from 'react';
-import { ArrowDown, MapPin, Mail, Phone, Download, Sparkles } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ArrowDown, MapPin, Mail, Phone, Download, Sparkles, Clock } from 'lucide-react';
 import { ProfileData, SocialLink } from '../types';
 
 interface HeroProps {
@@ -19,7 +19,18 @@ const SocialIcon: React.FC<{ link: SocialLink }> = ({ link }) => {
       href={link.url} 
       target="_blank" 
       rel="noopener noreferrer" 
-      className="p-3 rounded-full bg-white/80 hover:bg-white dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-xl"
+      className="p-3 rounded-full bg-white/80 hover:bg-white dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-600 hover:text-white dark:text-gray-300 dark:hover:text-white transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-xl"
+      style={{
+        '--hover-bg': '#4169E1'
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.backgroundColor = '#4169E1';
+        e.currentTarget.style.color = 'white';
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.backgroundColor = '';
+        e.currentTarget.style.color = '';
+      }}
       aria-label={link.platform}
     >
       {icons[link.icon.toLowerCase()]}
@@ -28,28 +39,73 @@ const SocialIcon: React.FC<{ link: SocialLink }> = ({ link }) => {
 };
 
 const Hero: React.FC<HeroProps> = ({ data }) => {
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const formatTime = (date: Date) => {
+    return date.toLocaleTimeString('en-US', {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: true,
+      timeZone: 'Africa/Nairobi'
+    });
+  };
+
+  const formatDate = (date: Date) => {
+    return date.toLocaleDateString('en-US', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      timeZone: 'Africa/Nairobi'
+    });
+  };
+
   return (
-    <section id="about" className="pt-28 pb-20 md:pt-40 md:pb-28 min-h-screen flex items-center bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 relative overflow-hidden">
-      {/* Animated background elements */}
+    <section id="about" className="pt-28 pb-20 md:pt-40 md:pb-28 min-h-screen flex items-center bg-gradient-to-br from-blue-50 via-red-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 relative overflow-hidden">
+      {/* Animated background elements with royal blue and red */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-200/30 dark:bg-blue-800/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-200/30 dark:bg-purple-800/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-indigo-200/20 dark:bg-indigo-800/10 rounded-full blur-3xl animate-pulse delay-500"></div>
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full blur-3xl animate-pulse" style={{ backgroundColor: '#4169E1', opacity: 0.1 }}></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full blur-3xl animate-pulse delay-1000" style={{ backgroundColor: '#FF0000', opacity: 0.1 }}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl animate-pulse delay-500" style={{ backgroundColor: '#4169E1', opacity: 0.05 }}></div>
       </div>
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
+        {/* Time Display at Top */}
+        <div className="text-center mb-8">
+          <div className="inline-flex items-center bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-full px-6 py-3 shadow-lg">
+            <Clock size={20} className="mr-3" style={{ color: '#4169E1' }} />
+            <div className="text-center">
+              <div className="font-mono font-bold text-lg" style={{ color: '#4169E1' }}>
+                {formatTime(currentTime)} EAT
+              </div>
+              <div className="text-sm text-gray-600 dark:text-gray-300">
+                {formatDate(currentTime)}
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="w-full md:w-1/2 order-2 md:order-1">
             <div className="flex items-center mb-4">
-              <Sparkles className="w-6 h-6 text-blue-600 dark:text-blue-400 mr-2" />
-              <span className="text-blue-600 dark:text-blue-400 font-medium">Welcome to my portfolio</span>
+              <Sparkles className="w-6 h-6 mr-2" style={{ color: '#4169E1' }} />
+              <span className="font-medium" style={{ color: '#4169E1' }}>Welcome to my portfolio</span>
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-800 dark:text-white leading-tight">
               Hi, I'm {' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 relative">
-                {data.name.split(' ')[0]}
-                <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 rounded-full transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+              <span className="relative">
+                <span style={{ color: '#4169E1' }}>{data.name.split(' ')[0]}</span>
+                <span className="absolute -bottom-2 left-0 w-full h-1 rounded-full transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100" style={{ backgroundColor: '#FF0000' }}></span>
               </span>
             </h1>
             
@@ -62,19 +118,27 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
             </p>
             
             <div className="flex flex-wrap items-center gap-6 mb-10">
-              <div className="flex items-center text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+              <div className="flex items-center text-gray-600 dark:text-gray-300 transition-colors hover:scale-105 transform"
+                   onMouseEnter={(e) => e.currentTarget.style.color = '#4169E1'}
+                   onMouseLeave={(e) => e.currentTarget.style.color = ''}>
                 <MapPin size={18} className="mr-2" />
                 <span>{data.location}</span>
               </div>
               
               <div className="flex items-center text-gray-600 dark:text-gray-300">
                 <Mail size={18} className="mr-2" />
-                <a href={`mailto:${data.email}`} className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">{data.email}</a>
+                <a href={`mailto:${data.email}`} 
+                   className="transition-colors hover:scale-105 transform"
+                   onMouseEnter={(e) => e.target.style.color = '#4169E1'}
+                   onMouseLeave={(e) => e.target.style.color = ''}>{data.email}</a>
               </div>
               
               <div className="flex items-center text-gray-600 dark:text-gray-300">
                 <Phone size={18} className="mr-2" />
-                <a href={`tel:${data.phone.split(',')[0]}`} className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">{data.phone.split(',')[0]}</a>
+                <a href={`tel:${data.phone.split(',')[0]}`} 
+                   className="transition-colors hover:scale-105 transform"
+                   onMouseEnter={(e) => e.target.style.color = '#4169E1'}
+                   onMouseLeave={(e) => e.target.style.color = ''}>{data.phone.split(',')[0]}</a>
               </div>
             </div>
             
@@ -87,14 +151,26 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
             <div className="flex flex-col sm:flex-row gap-4">
               <a 
                 href="#contact" 
-                className="btn-primary px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium rounded-full transition-all duration-300 flex items-center justify-center hover:shadow-lg transform hover:scale-105"
+                className="btn-primary px-8 py-4 text-white font-medium rounded-full transition-all duration-300 flex items-center justify-center hover:shadow-lg transform hover:scale-105"
+                style={{ backgroundColor: '#4169E1' }}
+                onMouseEnter={(e) => e.target.style.backgroundColor = '#FF0000'}
+                onMouseLeave={(e) => e.target.style.backgroundColor = '#4169E1'}
               >
                 Contact Me
               </a>
               
               <a 
                 href={data.resumeUrl} 
-                className="btn-secondary px-8 py-4 border-2 border-gray-300 dark:border-gray-700 hover:border-blue-600 dark:hover:border-blue-400 text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 font-medium rounded-full transition-all duration-300 flex items-center justify-center hover:shadow-lg transform hover:scale-105 bg-white/80 dark:bg-gray-800/80"
+                className="btn-secondary px-8 py-4 border-2 font-medium rounded-full transition-all duration-300 flex items-center justify-center hover:shadow-lg transform hover:scale-105 bg-white/80 dark:bg-gray-800/80"
+                style={{ borderColor: '#4169E1', color: '#4169E1' }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = '#4169E1';
+                  e.target.style.color = 'white';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = '';
+                  e.target.style.color = '#4169E1';
+                }}
               >
                 Download CV
                 <Download size={18} className="ml-2" />
@@ -111,16 +187,16 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-blue-600 to-purple-600 dark:from-blue-500 dark:to-purple-500 rounded-full opacity-20 z-0 animate-pulse"></div>
-              <div className="absolute -top-6 -left-6 w-24 h-24 bg-gradient-to-br from-indigo-600 to-pink-600 dark:from-indigo-500 dark:to-pink-500 rounded-full opacity-20 z-0 animate-pulse delay-1000"></div>
-              <div className="absolute top-1/2 -right-12 w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full opacity-30 z-0 animate-bounce"></div>
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 rounded-full z-0 animate-pulse" style={{ backgroundColor: '#4169E1', opacity: 0.2 }}></div>
+              <div className="absolute -top-6 -left-6 w-24 h-24 rounded-full z-0 animate-pulse delay-1000" style={{ backgroundColor: '#FF0000', opacity: 0.2 }}></div>
+              <div className="absolute top-1/2 -right-12 w-16 h-16 rounded-full z-0 animate-bounce" style={{ backgroundColor: '#4169E1', opacity: 0.3 }}></div>
             </div>
           </div>
         </div>
         
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden md:flex flex-col items-center animate-bounce">
           <span className="text-gray-500 dark:text-gray-400 text-sm mb-2">Discover more</span>
-          <ArrowDown size={20} className="text-blue-600 dark:text-blue-400" />
+          <ArrowDown size={20} style={{ color: '#4169E1' }} />
         </div>
       </div>
     </section>
