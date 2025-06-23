@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const ClientLogos: React.FC = () => {
   const clients = [
-    { name: 'Rebert Solutions', logo: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=100&h=60&dpr=1' },
+    { name: 'Rebearth Solutions', logo: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=100&h=60&dpr=1' },
     { name: 'Print Masters Ltd', logo: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=100&h=60&dpr=1' },
     { name: 'Sungura Creations', logo: 'https://images.pexels.com/photos/3184293/pexels-photo-3184293.jpeg?auto=compress&cs=tinysrgb&w=100&h=60&dpr=1' },
     { name: 'Eleganza Magnifica', logo: 'https://images.pexels.com/photos/3184294/pexels-photo-3184294.jpeg?auto=compress&cs=tinysrgb&w=100&h=60&dpr=1' },
