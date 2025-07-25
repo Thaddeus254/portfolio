@@ -31,7 +31,7 @@ export const profileData: ProfileData = {
     {
       company: 'Eleganza Magnifica ',
       position: 'Senior Graphic Designer',
-      period: 'March 2025 - Present',
+      period: 'March 2025 - June 2025',
       description: 'Lead designer for major brand campaigns and digital marketing initiatives.',
       achievements: [
         'Developed brand identities for 15+ clients across various industries',
@@ -81,10 +81,10 @@ export const profileData: ProfileData = {
   ],
   education: [
     {
-      institution: 'The Kisumu National Polytechnic',
-      degree: 'Craft In Electrical Engineering',
-      period: '2019 - 2022',
-      description: 'Focused on electrical installation, power systems, and technical problem-solving skills.'
+      institution: 'ICS Technical College',
+      degree: 'Diploma in Graphic Design',
+      period: '2019 - 2021',
+      description: 'Focused in Digital & Print Design.'
     },
     {
       institution: 'Khan Academy',
