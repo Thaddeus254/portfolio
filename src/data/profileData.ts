@@ -99,7 +99,7 @@ export const profileData: ProfileData = {
     { platform: 'Twitter', url: 'https://x.com/shennel_oduor?t=Bu-wFiUNzLIYgddSDJt4qA&s=08/', icon: 'twitter' },
     { platform: 'Whatsapp', url: 'https://wa.me/message/SCQ7POKM6TQ5N1/', icon: 'whatsapp' }
   ],
-  resumeUrl: 'https://drive.google.com/uc?export=download&id=1ufAzrGT-7OZNYrBfz5xeBuoDtPfSI8ss',
+  resumeUrl: 'https://drive.google.com/file/d/1sa_qsBS5bQUg2F1ufvxPVhEFF2KtToiK/view?usp=drive_link',
   projects: [
     {
       title: 'Web Design - Rebert Solutions',
