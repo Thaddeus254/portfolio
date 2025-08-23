@@ -102,11 +102,11 @@ export const profileData: ProfileData = {
   resumeUrl: 'https://drive.google.com/file/d/1sa_qsBS5bQUg2F1ufvxPVhEFF2KtToiK/view?usp=drive_link',
   projects: [
     {
-      title: 'Web Design - Rebert Solutions',
-      description: 'Complete web design and development project for Rebert Solutions, featuring modern responsive design, user-friendly interface, and comprehensive business solutions showcase.',
+      title: 'Web Design',
+      description: 'Successfully delivered multiple complete web design and development projects, creating modern responsive websites with user-friendly interfaces and tailored solutions to showcase businesses effectively.',
       image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       tags: ['Web Design', 'Responsive', 'Business Solutions'],
-      link: 'https://rebeartsolutions.co.ke'
+      link: 'https://rebearthsolutions.co.ke/', 'https://stetechsolartechnology.co.ke/'
     },
     {
       title: 'Brand Identity - Tech Startup',
