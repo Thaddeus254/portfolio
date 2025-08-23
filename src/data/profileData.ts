@@ -113,6 +113,7 @@ export const profileData: ProfileData = {
       description: 'Complete brand identity design including logo, color palette, typography, and brand guidelines for an innovative tech startup.',
       image: 'https://images.pexels.com/photos/32199217/pexels-photo-32199217.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       tags: ['Branding', 'Logo Design', 'Guidelines']
+      link: 'https://rebearthsolutions.co.ke/'
     },
     {
       title: 'Graphic Design Projects',
@@ -140,28 +141,28 @@ export const profileData: ProfileData = {
       description: 'Provided customized T-shirt printing solutions featuring high-quality graphics, durable prints, and a variety of fabric options. Handled design, production, and delivery for events, businesses, and personal orders—ensuring vibrant results and client satisfaction.',
       image: 'https://images.pexels.com/photos/32199813/pexels-photo-32199813.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
       tags: ['Design', 'Production', 'Delivery', 'Advert'],
-      link: 'https://drive.google.com/drive/folders/1sa_qsBS5bQUg2F1ufvxPVhEFF2KtToiK'
+      link: 'https://photos.app.goo.gl/BtiUnUKiDXyqE2vD9'
     },
     {
       title: 'Promotional Products',
       description: 'Developed and delivered a wide range of branded promotional items, including pens, mugs, bags, and corporate gifts, to support marketing campaigns and brand visibility. Ensured high-quality production, consistent branding, and timely fulfillment for both small and large-scale orders.',
       image: 'https://images.pexels.com/photos/32199898/pexels-photo-32199898.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
       tags: ['Design', 'Print', 'Brand', 'Marketing'],
-      link: 'https://drive.google.com/drive/folders/1sa_qsBS5bQUg2F1ufvxPVhEFF2KtToiK'
+      link: 'https://photos.app.goo.gl/MkY4rgejzzS34bEz9'
     },
     {
       title: 'Typesetting & Document Services',
       description: 'Professional typesetting and document formatting services for academic papers, books, reports, and corporate documents. Specialized in creating polished, publication-ready documents with proper formatting, layout design, and print optimization.',
       image: 'https://images.pexels.com/photos/159751/book-address-book-learning-learn-159751.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       tags: ['Typesetting', 'Document Design', 'Academic', 'Publishing'],
-      link: 'https://drive.google.com/drive/folders/1sa_qsBS5bQUg2F1ufvxPVhEFF2KtToiK'
+      link: 'https://photos.app.goo.gl/nrCEgvCZQAiJkhN96'
     },
     {
       title: 'IT Services & Network Solutions',
       description: 'Comprehensive IT support services including WAN/LAN network setup and administration, computer maintenance, troubleshooting, and technical training. Delivered reliable networking solutions for businesses and educational institutions.',
       image: 'https://images.pexels.com/photos/159304/network-cable-ethernet-computer-159304.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       tags: ['IT Support', 'Networking', 'WAN/LAN', 'Technical Training'],
-      link: 'https://drive.google.com/drive/folders/1sa_qsBS5bQUg2F1ufvxPVhEFF2KtToiK'
+      link: 
     }
   ]
 };
