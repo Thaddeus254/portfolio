@@ -113,7 +113,6 @@ export const profileData: ProfileData = {
       description: 'Complete brand identity design including logo, color palette, typography, and brand guidelines for an innovative tech startup.',
       image: 'https://images.pexels.com/photos/32199217/pexels-photo-32199217.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       tags: ['Branding', 'Logo Design', 'Guidelines']
-      link: 'https://rebearthsolutions.co.ke/'
     },
     {
       title: 'Graphic Design Projects',
