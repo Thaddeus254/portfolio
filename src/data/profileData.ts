@@ -119,7 +119,7 @@ export const profileData: ProfileData = {
       description: 'Collection of creative graphic design works including logos, brochures, flyers, and marketing materials for various clients across different industries.',
       image: 'https://images.pexels.com/photos/3571094/pexels-photo-3571094.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       tags: ['Logo Design', 'Brochures', 'Marketing Materials'],
-      link: 'https://drive.google.com/drive/folders/1sa_qsBS5bQUg2F1ufvxPVhEFF2KtToiK'
+      link: 'https://photos.app.goo.gl/ghgk8pDt9oUuYYD37'
     },
     {
       title: 'Product Packaging Design',
