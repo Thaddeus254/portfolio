@@ -161,7 +161,7 @@ export const profileData: ProfileData = {
       description: 'Comprehensive IT support services including WAN/LAN network setup and administration, computer maintenance, troubleshooting, and technical training. Delivered reliable networking solutions for businesses and educational institutions.',
       image: 'https://images.pexels.com/photos/159304/network-cable-ethernet-computer-159304.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       tags: ['IT Support', 'Networking', 'WAN/LAN', 'Technical Training'],
-      link: 
+      link: 'https://nexacraft.vercel.app/'
     }
   ]
 };
