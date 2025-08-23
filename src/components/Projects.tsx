@@ -62,20 +62,22 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                   ))}
                 </div>
                 
-                <div className="mt-6">
-                  <a
-                    href={project.link || 'https://drive.google.com/drive/folders/1sa_qsBS5bQUg2F1ufvxPVhEFF2KtToiK'}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center px-6 py-3 text-white font-medium rounded-full transition-all duration-300 hover:shadow-lg transform hover:scale-105"
-                    style={{ background: 'linear-gradient(135deg, #4169E1 0%, #FF0000 100%)' }}
-                    onMouseEnter={(e) => e.currentTarget.style.background = 'linear-gradient(135deg, #FF0000 0%, #4169E1 100%)'}
-                    onMouseLeave={(e) => e.currentTarget.style.background = 'linear-gradient(135deg, #4169E1 0%, #FF0000 100%)'}
-                  >
-                    View Project
-                    <ExternalLink size={16} className="ml-2" />
-                  </a>
-                </div>
+                {project.link && (
+                  <div className="mt-6">
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-6 py-3 text-white font-medium rounded-full transition-all duration-300 hover:shadow-lg transform hover:scale-105"
+                      style={{ background: 'linear-gradient(135deg, #4169E1 0%, #FF0000 100%)' }}
+                      onMouseEnter={(e) => e.target.style.background = 'linear-gradient(135deg, #FF0000 0%, #4169E1 100%)'}
+                      onMouseLeave={(e) => e.target.style.background = 'linear-gradient(135deg, #4169E1 0%, #FF0000 100%)'}
+                    >
+                      View Project
+                      <ExternalLink size={16} className="ml-2" />
+                    </a>
+                  </div>
+                )}
               </div>
             </div>
           ))}
@@ -85,15 +87,15 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
           <p className="text-gray-600 dark:text-gray-300 text-lg mb-4">
             Interested in working together? Let's create something amazing!
           </p>
-          <Link 
-            to="/contact" 
+          <a 
+            href="#contact" 
             className="inline-block px-8 py-3 text-white font-medium rounded-full transition-all duration-300 hover:shadow-lg transform hover:scale-105"
             style={{ background: 'linear-gradient(135deg, #4169E1 0%, #FF0000 100%)' }}
             onMouseEnter={(e) => e.target.style.background = 'linear-gradient(135deg, #FF0000 0%, #4169E1 100%)'}
             onMouseLeave={(e) => e.target.style.background = 'linear-gradient(135deg, #4169E1 0%, #FF0000 100%)'}
           >
             Get In Touch
-          </Link>
+          </a>
         </div>
       </div>
     </section>

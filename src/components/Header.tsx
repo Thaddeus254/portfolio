@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Sun, Moon, Clock } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import GoogleTranslate from './GoogleTranslate';
@@ -10,7 +9,6 @@ const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [currentTime, setCurrentTime] = useState(new Date());
   const { theme, toggleTheme } = useTheme();
-  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,17 +57,11 @@ const Header: React.FC = () => {
 
   const handleNavClick = (href: string) => {
     setIsMenuOpen(false);
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   };
-
-  const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Skills', path: '/skills' },
-    { name: 'Experience', path: '/experience' },
-    { name: 'Projects', path: '/projects' },
-    { name: 'Education', path: '/education' },
-    { name: 'Contact', path: '/contact' }
-  ];
 
   return (
     <motion.header 
@@ -83,34 +75,30 @@ const Header: React.FC = () => {
       transition={{ duration: 0.6 }}
     >
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
-        <Link to="/">
-          <motion.div 
+        <motion.div 
           className="text-lg font-semibold dark:text-white"
           whileHover={{ scale: 1.05 }}
         >
           <span className="text-blue-600 dark:text-blue-400" style={{ color: '#4169E1' }}>Shannel</span> Oduor
         </motion.div>
-        </Link>
         
         <nav className="hidden md:flex space-x-8">
-          {navItems.map((item) => (
+          {['About', 'Skills', 'Experience', 'Projects', 'Education', 'Contact'].map((item) => (
             <motion.a 
-              key={item.name}
-              as={Link}
-              to={item.path}
-              className={`text-gray-600 hover:text-gray-800 dark:text-gray-300 dark:hover:text-blue-400 transition-colors ${
-                location.pathname === item.path ? 'font-semibold' : ''
-              }`}
+              key={item}
+              href={`#${item.toLowerCase()}`}
+              className="text-gray-600 hover:text-gray-800 dark:text-gray-300 dark:hover:text-blue-400 transition-colors"
               style={{ '--tw-text-opacity': '1' }}
               onMouseEnter={(e) => e.target.style.color = '#4169E1'}
               onMouseLeave={(e) => e.target.style.color = ''}
-              onClick={() => {
-                handleNavClick(item.path);
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick(`#${item.toLowerCase()}`);
               }}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              {item.name}
+              {item}
             </motion.a>
           ))}
         </nav>
@@ -188,16 +176,14 @@ const Header: React.FC = () => {
                 </div>
               </div>
               
-              {navItems.slice(1).map((item, index) => (
+              {['About', 'Skills', 'Experience', 'Projects', 'Education', 'Contact'].map((item, index) => (
                 <motion.a 
-                  key={item.name}
-                  as={Link}
-                  to={item.path}
-                  className={`text-gray-600 hover:text-gray-800 dark:text-gray-300 dark:hover:text-blue-400 transition-colors py-2 ${
-                    location.pathname === item.path ? 'font-semibold' : ''
-                  }`}
-                  onClick={() => {
-                    handleNavClick(item.path);
+                  key={item}
+                  href={`#${item.toLowerCase()}`}
+                  className="text-gray-600 hover:text-gray-800 dark:text-gray-300 dark:hover:text-blue-400 transition-colors py-2"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick(`#${item.toLowerCase()}`);
                   }}
                   onMouseEnter={(e) => e.target.style.color = '#4169E1'}
                   onMouseLeave={(e) => e.target.style.color = ''}
@@ -206,7 +192,7 @@ const Header: React.FC = () => {
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ scale: 1.05, x: 10 }}
                 >
-                  {item.name}
+                  {item}
                 </motion.a>
               ))}
             </div>
