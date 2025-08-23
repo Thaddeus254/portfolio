@@ -1,4 +1,5 @@
 import React from 'react';
+import { ExternalLink } from 'lucide-react';
 import { Project } from '../types';
 
 interface ProjectsProps {
@@ -60,6 +61,23 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                     </span>
                   ))}
                 </div>
+                
+                {project.link && (
+                  <div className="mt-6">
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-6 py-3 text-white font-medium rounded-full transition-all duration-300 hover:shadow-lg transform hover:scale-105"
+                      style={{ background: 'linear-gradient(135deg, #4169E1 0%, #FF0000 100%)' }}
+                      onMouseEnter={(e) => e.target.style.background = 'linear-gradient(135deg, #FF0000 0%, #4169E1 100%)'}
+                      onMouseLeave={(e) => e.target.style.background = 'linear-gradient(135deg, #4169E1 0%, #FF0000 100%)'}
+                    >
+                      View Project
+                      <ExternalLink size={16} className="ml-2" />
+                    </a>
+                  </div>
+                )}
               </div>
             </div>
           ))}

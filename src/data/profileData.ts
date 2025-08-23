@@ -115,46 +115,53 @@ export const profileData: ProfileData = {
       tags: ['Branding', 'Logo Design', 'Guidelines']
     },
     {
-      title: 'Social Media Campaign',
-      description: 'Series of engaging social media graphics and animations for a major retail brand\'s seasonal campaign.',
+      title: 'Graphic Design Projects',
+      description: 'Collection of creative graphic design works including logos, brochures, flyers, and marketing materials for various clients across different industries.',
       image: 'https://images.pexels.com/photos/3571094/pexels-photo-3571094.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      tags: ['Social Media', 'Animation', 'Marketing']
+      tags: ['Logo Design', 'Brochures', 'Marketing Materials'],
+      link: 'https://drive.google.com/drive/folders/1sa_qsBS5bQUg2F1ufvxPVhEFF2KtToiK'
     },
     {
       title: 'Product Packaging Design',
       description: 'Creative packaging design for a premium cosmetics line, including box design, labels, and promotional materials.',
       image: 'https://images.pexels.com/photos/32199536/pexels-photo-32199536.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
-      tags: ['Packaging', 'Print Design', 'Branding']
+      tags: ['Packaging', 'Print Design', 'Branding'],
+      link: 'https://drive.google.com/drive/folders/1sa_qsBS5bQUg2F1ufvxPVhEFF2KtToiK'
     },
     {
       title: 'Banner Printing Services',
       description: 'Delivered custom-designed, high-resolution banners using durable, weather-resistant materials. Managed end-to-end production for events, promotions, and branding campaigns with a focus on quality, quick turnaround, and visual impact.',
       image: 'https://images.pexels.com/photos/32199717/pexels-photo-32199717.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
-      tags: ['Design', 'Print', 'Brand', 'Advert']
+      tags: ['Design', 'Print', 'Brand', 'Advert'],
+      link: 'https://drive.google.com/drive/folders/1sa_qsBS5bQUg2F1ufvxPVhEFF2KtToiK'
     },
     {
       title: 'T-shirt Printing Services',
       description: 'Provided customized T-shirt printing solutions featuring high-quality graphics, durable prints, and a variety of fabric options. Handled design, production, and delivery for events, businesses, and personal orders—ensuring vibrant results and client satisfaction.',
       image: 'https://images.pexels.com/photos/32199813/pexels-photo-32199813.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
-      tags: ['Design', 'Production', 'Delivery', 'Advert']
+      tags: ['Design', 'Production', 'Delivery', 'Advert'],
+      link: 'https://drive.google.com/drive/folders/1sa_qsBS5bQUg2F1ufvxPVhEFF2KtToiK'
     },
     {
       title: 'Promotional Products',
       description: 'Developed and delivered a wide range of branded promotional items, including pens, mugs, bags, and corporate gifts, to support marketing campaigns and brand visibility. Ensured high-quality production, consistent branding, and timely fulfillment for both small and large-scale orders.',
       image: 'https://images.pexels.com/photos/32199898/pexels-photo-32199898.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
-      tags: ['Design', 'Print', 'Brand', 'Marketing']
+      tags: ['Design', 'Print', 'Brand', 'Marketing'],
+      link: 'https://drive.google.com/drive/folders/1sa_qsBS5bQUg2F1ufvxPVhEFF2KtToiK'
     },
     {
       title: 'Typesetting & Document Services',
       description: 'Professional typesetting and document formatting services for academic papers, books, reports, and corporate documents. Specialized in creating polished, publication-ready documents with proper formatting, layout design, and print optimization.',
       image: 'https://images.pexels.com/photos/159751/book-address-book-learning-learn-159751.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      tags: ['Typesetting', 'Document Design', 'Academic', 'Publishing']
+      tags: ['Typesetting', 'Document Design', 'Academic', 'Publishing'],
+      link: 'https://drive.google.com/drive/folders/1sa_qsBS5bQUg2F1ufvxPVhEFF2KtToiK'
     },
     {
       title: 'IT Services & Network Solutions',
       description: 'Comprehensive IT support services including WAN/LAN network setup and administration, computer maintenance, troubleshooting, and technical training. Delivered reliable networking solutions for businesses and educational institutions.',
       image: 'https://images.pexels.com/photos/159304/network-cable-ethernet-computer-159304.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      tags: ['IT Support', 'Networking', 'WAN/LAN', 'Technical Training']
+      tags: ['IT Support', 'Networking', 'WAN/LAN', 'Technical Training'],
+      link: 'https://drive.google.com/drive/folders/1sa_qsBS5bQUg2F1ufvxPVhEFF2KtToiK'
     }
   ]
 };
