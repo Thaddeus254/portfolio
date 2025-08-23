@@ -106,7 +106,7 @@ export const profileData: ProfileData = {
       description: 'Successfully delivered multiple complete web design and development projects, creating modern responsive websites with user-friendly interfaces and tailored solutions to showcase businesses effectively.',
       image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       tags: ['Web Design', 'Responsive', 'Business Solutions'],
-      link: 'https://rebearthsolutions.co.ke/', 'https://stetechsolartechnology.co.ke/'
+      link: 'https://rebearthsolutions.co.ke/'
     },
     {
       title: 'Brand Identity - Tech Startup',
