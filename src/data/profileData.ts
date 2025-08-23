@@ -29,15 +29,15 @@ export const profileData: ProfileData = {
   ],
   experience: [
     {
-      company: 'Eleganza Magnifica ',
+      company: 'Eleganza Magnifica',
       position: 'Senior Graphic Designer',
       period: 'March 2025 - June 2025',
       description: 'Lead designer for major brand campaigns and digital marketing initiatives.',
       achievements: [
         'Developed brand identities for 15+ clients across various industries',
         'Led a team of 3 junior designers, mentoring and overseeing project delivery',
-        'Increased client satisfaction rate by 60% through improved design processes',
-        'Created award-winning social media campaign designs for major retail client'
+        'Increased client satisfaction rate by 60% through improved design processes', 
+        'Created award-winning graphic design projects for major retail clients'
       ]
     },
     {

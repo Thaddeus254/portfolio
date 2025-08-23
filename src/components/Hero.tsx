@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowDown, MapPin, Mail, Phone, Download, Sparkles, Clock } from 'lucide-react';
 import { ProfileData, SocialLink } from '../types';
 
@@ -149,15 +150,15 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <a 
-                href="#contact" 
+              <Link 
+                to="/contact" 
                 className="btn-primary px-8 py-4 text-white font-medium rounded-full transition-all duration-300 flex items-center justify-center hover:shadow-lg transform hover:scale-105"
                 style={{ backgroundColor: '#4169E1' }}
                 onMouseEnter={(e) => e.target.style.backgroundColor = '#FF0000'}
                 onMouseLeave={(e) => e.target.style.backgroundColor = '#4169E1'}
               >
                 Contact Me
-              </a>
+              </Link>
               
               <a 
                 href={data.resumeUrl} 
