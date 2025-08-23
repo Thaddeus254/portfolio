@@ -129,11 +129,11 @@ export const profileData: ProfileData = {
       link: 'https://drive.google.com/drive/folders/1sa_qsBS5bQUg2F1ufvxPVhEFF2KtToiK'
     },
     {
-      title: 'Banner Printing Services',
-      description: 'Delivered custom-designed, high-resolution banners using durable, weather-resistant materials. Managed end-to-end production for events, promotions, and branding campaigns with a focus on quality, quick turnaround, and visual impact.',
+      title: 'Banner & Sticker Printing Services',
+      description: 'Delivered custom-designed, high-resolution banners and stickers using durable, weather-resistant materials. Managed end-to-end production for events, promotions, and branding campaigns, with stickers also serving as powerful tools to brand products and businesses. Focused on quality, quick turnaround, and strong visual impact.',
       image: 'https://images.pexels.com/photos/32199717/pexels-photo-32199717.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
       tags: ['Design', 'Print', 'Brand', 'Advert'],
-      link: 'https://drive.google.com/drive/folders/1sa_qsBS5bQUg2F1ufvxPVhEFF2KtToiK'
+      link: 'https://photos.app.goo.gl/KxCBSATY4HnpHvU56'
     },
     {
       title: 'T-shirt Printing Services',
