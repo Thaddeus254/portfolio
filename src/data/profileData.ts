@@ -103,7 +103,7 @@ export const profileData: ProfileData = {
   projects: [
     {
       title: 'Web Design',
-      description: 'Successfully delivered multiple complete web design and development projects, creating modern responsive websites with user-friendly interfaces and tailored solutions to showcase businesses effectively.',
+      description: 'Successfully delivered multiple complete web design and development projects including Rebearth Solutions, Shannel.com, and Shetrahgrafix.co.ke, creating modern responsive websites with user-friendly interfaces.',
       image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       tags: ['Web Design', 'Responsive', 'Business Solutions'],
       link: '/web-design-projects'

@@ -16,49 +16,22 @@ const WebDesignProjects: React.FC = () => {
       category: 'Business Website'
     },
     {
-      title: 'NexaCraft Solutions',
-      description: 'Modern tech startup website featuring innovative design, interactive elements, and comprehensive service showcase. Built with cutting-edge web technologies.',
-      url: 'https://nexacraft.vercel.app/',
+      title: 'Shannel Personal Portfolio',
+      description: 'Professional personal portfolio website showcasing creative work, skills, and experience. Features modern design, interactive elements, and comprehensive project galleries.',
+      url: 'https://shannel.com/',
       image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
       completedDate: 'February 2024',
-      category: 'Tech Startup'
+      category: 'Portfolio Website'
     },
     {
-      title: 'Creative Portfolio Website',
-      description: 'Personal portfolio website for a creative professional, featuring dynamic animations, project galleries, and interactive contact forms.',
-      url: 'https://creative-portfolio-demo.vercel.app/',
+      title: 'Shetrahgrafix Business Website',
+      description: 'Complete business website for Shetrahgrafix design services, featuring service portfolio, client testimonials, and comprehensive contact information.',
+      url: 'https://shetrahgrafix.co.ke/',
       image: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      technologies: ['Next.js', 'CSS Modules', 'Animation Libraries'],
-      completedDate: 'January 2024',
-      category: 'Portfolio'
-    },
-    {
-      title: 'E-Commerce Platform',
-      description: 'Full-featured e-commerce website with product catalog, shopping cart, payment integration, and admin dashboard for inventory management.',
-      url: 'https://ecommerce-demo-site.vercel.app/',
-      image: 'https://images.pexels.com/photos/3184293/pexels-photo-3184293.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe API'],
-      completedDate: 'December 2023',
-      category: 'E-Commerce'
-    },
-    {
-      title: 'Restaurant Website',
-      description: 'Elegant restaurant website with online menu, reservation system, gallery, and location information. Optimized for mobile ordering.',
-      url: 'https://restaurant-demo.vercel.app/',
-      image: 'https://images.pexels.com/photos/3184294/pexels-photo-3184294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       technologies: ['HTML5', 'CSS3', 'JavaScript', 'PHP'],
-      completedDate: 'November 2023',
-      category: 'Restaurant'
-    },
-    {
-      title: 'Educational Platform',
-      description: 'Comprehensive learning management system with course catalog, student dashboard, progress tracking, and interactive learning modules.',
-      url: 'https://education-platform-demo.vercel.app/',
-      image: 'https://images.pexels.com/photos/3184295/pexels-photo-3184295.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      technologies: ['Vue.js', 'Laravel', 'MySQL', 'WebRTC'],
-      completedDate: 'October 2023',
-      category: 'Education'
+      completedDate: 'January 2024',
+      category: 'Business Website'
     }
   ];
 
@@ -66,7 +39,7 @@ const WebDesignProjects: React.FC = () => {
     <>
       <Helmet>
         <title>Web Design Projects - Shannel Oduor Portfolio</title>
-        <meta name="description" content="Explore my web design projects including business websites, e-commerce platforms, and custom web applications. Professional web development services in Kenya." />
+        <meta name="description" content="Explore my web design projects including Rebearth Solutions, Shannel.com, and Shetrahgrafix.co.ke. Professional web development services in Kenya." />
       </Helmet>
 
       <div className="pt-28 pb-20 min-h-screen bg-gradient-to-br from-blue-50 via-red-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
@@ -95,15 +68,15 @@ const WebDesignProjects: React.FC = () => {
               </h1>
               <div className="w-24 h-1.5 rounded-full mx-auto mb-6" style={{ background: 'linear-gradient(90deg, #4169E1 0%, #FF0000 100%)' }}></div>
               <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                A comprehensive showcase of my web development projects, featuring responsive designs, 
+                A showcase of my professional web development projects, featuring responsive designs, 
                 modern user interfaces, and cutting-edge web technologies. Each project demonstrates 
-                my commitment to creating exceptional digital experiences.
+                my commitment to creating exceptional digital experiences for businesses and individuals.
               </p>
             </div>
           </motion.div>
 
           {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {webProjects.map((project, index) => (
               <motion.div
                 key={index}
@@ -176,7 +149,7 @@ const WebDesignProjects: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* View Project Button */}
+                  {/* Visit Website Button */}
                   <a
                     href={project.url}
                     target="_blank"
@@ -194,9 +167,42 @@ const WebDesignProjects: React.FC = () => {
             ))}
           </div>
 
+          {/* Additional Projects Section */}
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
+            <div className="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-800">
+              <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">
+                More <span style={{ color: '#4169E1' }}>Web Projects</span> Coming Soon
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
+                I'm constantly working on new web development projects. These featured websites represent 
+                my commitment to creating professional, responsive, and user-friendly web solutions for 
+                businesses and individuals.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-600 dark:text-gray-300">
+                <div className="flex items-center justify-center">
+                  <div className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: '#4169E1' }}></div>
+                  Responsive Design
+                </div>
+                <div className="flex items-center justify-center">
+                  <div className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: '#FF0000' }}></div>
+                  SEO Optimized
+                </div>
+                <div className="flex items-center justify-center">
+                  <div className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: '#4169E1' }}></div>
+                  Fast Loading
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
           {/* Call to Action */}
           <motion.div 
-            className="text-center mt-16"
+            className="text-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
