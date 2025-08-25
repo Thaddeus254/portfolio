@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Sun, Moon, Clock } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
 import GoogleTranslate from './GoogleTranslate';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -9,6 +10,7 @@ const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [currentTime, setCurrentTime] = useState(new Date());
   const { theme, toggleTheme } = useTheme();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,9 +59,15 @@ const Header: React.FC = () => {
 
   const handleNavClick = (href: string) => {
     setIsMenuOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (location.pathname !== '/') {
+      // If not on home page, navigate to home first
+      window.location.href = `/${href}`;
+    } else {
+      // If on home page, scroll to section
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
@@ -79,7 +87,9 @@ const Header: React.FC = () => {
           className="text-lg font-semibold dark:text-white"
           whileHover={{ scale: 1.05 }}
         >
-          <span className="text-blue-600 dark:text-blue-400" style={{ color: '#4169E1' }}>Shannel</span> Oduor
+          <Link to="/">
+            <span className="text-blue-600 dark:text-blue-400" style={{ color: '#4169E1' }}>Shannel</span> Oduor
+          </Link>
         </motion.div>
         
         <nav className="hidden md:flex space-x-8">
